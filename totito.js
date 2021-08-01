@@ -56,7 +56,8 @@ bot.on('retar', (msg) => {
 	});
 	console.log(`${name} esta retando`);
 	usuarios.forEach((u, i) => {
-		if (u.id != 0 && u.stat == 0) {
+		// if (u.id != 0 && u.stat == 0) {
+		if ((u.id != 0 && u.stat == 0) || (u.id != 0 && u.stat == 1)) {
 			bot.sendMessage(id, `user: ${u.user} code: ${i}`);
 		}
 	});
@@ -561,3 +562,5 @@ bot.on('text', (msg) => {
 app.listen(port, () => {
 	console.log('servidor activo');
 });
+
+// let n_random = Math.round(Math.random() * (1 - 0) + 0);
