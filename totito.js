@@ -123,7 +123,7 @@ bot.on('retando', (msg) => {
 			if (id_temporal != undefined && id_temporal.id != id) {
 				let user_valido;
 				usuarios.forEach((u, i) => {
-					if (i != 0 && i == mensaje) {
+					if (i != 0 && i == mensaje && (u.stat == 0 || u.stat == 1)) {
 						u.stat = 2;
 						user_valido = true;
 						bot.sendMessage(id, `se envio el reto a ${u.user} espera que responda`);
